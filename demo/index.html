@@ -1,0 +1,335 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+
+<html xmlns="http://www.w3.org/1999/xhtml" lang="en">
+
+<head>
+
+	  <title>jQuery plugin: Easy List Splitter</title>
+
+	  
+
+      <!-- Meta -->
+
+      <meta http-equiv="content-type" content="text/html; charset=iso-8859-1" />
+
+	  <meta name="author" content="Andrea Cima Serniotti - Madeincima.it" />
+
+	  <meta name="description" content="Easy List Splitter: a clean and easy jQuery plugin to columnize lists." />
+
+	  <meta name="keywords" content="jQuery, list, ul, ol, how to, columnize, javascript, multi-col, multi columns, spit, nested list, list splitter, list columnizer, multi column list" />	  
+
+      
+
+      <!-- Scripts -->
+
+      <script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jquery/1.3.2/jquery.min.js"></script>
+
+	  <script type="text/javascript" src="scripts/jquery.easyListSplitter.js"></script>
+
+	  <script type="text/javascript" src="scripts/script.js"></script>
+
+      
+
+      <style type="text/css">
+
+		  html{font-size:62.5%}
+
+		  body{font-size:1.2em;color:#294f88}
+
+		  .sample{margin:30px;border:1px solid #92cdec;background:#d7e7ff;padding:30px 30px 0 30px}
+
+		  h1{margin:0;padding:0 0 30px 0;font-size:2em}
+
+		  h2{margin:0;padding:10px 0 5px 0;font-size:1.5em;clear:both}
+
+		  p{font-size:1.2em;line-height:170%;margin-bottom:30px;clear:both}
+
+		  ul,ol{padding:0;margin:0;font-size:1.2em}
+
+
+
+		.sample ul,.sample ol{list-style-type:none;background:url(images/dotted.gif) 0 0 repeat-x;width:180px;float:left;margin:0 10px 30px 0}
+
+			.sample li{background:url(images/dotted.gif) bottom left repeat-x;width:180px;float:left;padding:0}
+
+			.sample li a{padding:8px 20px 8px 0;width:160px;float:left;background:url(images/arrow-right.gif) right 12px no-repeat;text-decoration:none;color:#294f88}
+
+			.sample li a:hover{background-image:url(images/arrow-right-dark.gif)}
+
+		
+
+		.sample ul.children-sample{border-top:1px solid #294F88;background:none;width:300px;margin:0 20px 30px 0}
+
+			.sample ul.children-sample li{border-bottom:1px solid #294F88;background:none;padding:5px 15px 3px 10px;width:275px;}
+
+			.sample ul.children-sample ul{background:none;margin-bottom:10px}
+
+			.sample ul.children-sample ul li{background:transparent;color:#000000;border:0;font-size:.8em;padding:0 0 0 15px;margin-bottom:5px;background:url(images/arrow-right-grey.gif) left 1px no-repeat;}
+
+			.sample ul.children-sample h3{font-size:1em;margin-bottom:8px}
+
+			.sample ul.children-sample p{line-height:130%;font-size:1em;margin:0 0 10px 0;padding:0}
+
+
+
+      </style>
+
+      
+
+</head>
+
+<body>
+
+
+
+    <div class="sample">
+
+        <h1>jQuery plugin: Easy List Splitter - Version 1.0.2</h1>
+
+
+
+		 <h2>Create multiple lists from a single list ordering the items vertically</h2>
+
+          <p>You can choose the number of lists you want to create. The plugin will <strong>order the list items vertically by default</strong>. In this first sample we've splitted our list into 3 lists:</p>
+
+         
+
+                <ul class="loremipsum">
+
+                    <li><a href="#">Lorem ipsum 1</a></li>
+
+                    <li><a href="#">Donec pede 2</a></li>
+
+                    <li><a href="#">Fringilla vel 3</a></li>
+
+                    <li><a href="#">Eget arcu 4</a></li>
+
+                    <li><a href="#">In enim 5</a></li>
+
+                    <li><a href="#">Lorem farem 6</a></li>
+
+                    <li><a href="#">Pede justo 7</a></li>
+
+                    <li><a href="#">Vel aliquet 8</a></li>
+
+                    <li><a href="#">Arcu eget 9</a></li>
+
+                    <li><a href="#">Justo rhoncus 10</a></li>
+
+                    <li><a href="#">Ipsum dolor 11</a></li>
+
+                    <li><a href="#">Justo pedec 12</a></li>
+
+                    <li><a href="#">Romanorum 13</a></li>
+
+                </ul>
+
+                
+
+                <p>In this second sample we've splitted the list in 4 lists:</p>
+
+                
+
+                 <ul id="mylist">
+
+                    <li><a href="#">Lorem ipsum 1</a></li>
+
+                    <li><a href="#">Donec pede 2</a></li>
+
+                    <li><a href="#">Fringilla vel 3</a></li>
+
+                    <li><a href="#">Eget arcu 4</a></li>
+
+                    <li><a href="#">In enim 5</a></li>
+
+                    <li><a href="#">Lorem farem 6</a></li>
+
+                    <li><a href="#">Pede justo 7</a></li>
+
+                    <li><a href="#">Vel aliquet 8</a></li>
+
+                    <li><a href="#">Arcu eget 9</a></li>
+
+                    <li><a href="#">Justo rhoncus 10</a></li>
+
+                    <li><a href="#">Ipsum dolor 11</a></li>
+
+                    <li><a href="#">Justo pedec 12</a></li>
+
+                    <li><a href="#">Romanorum 13</a></li>
+
+                    <li><a href="#">Bellum incipit 14</a></li>
+
+                    <li><a href="#">Rosae rosarum 15</a></li>
+
+                </ul>
+
+               
+
+               
+
+                 <h2>Create multiple lists from a single list ordering the list items horizontally</h2>
+
+                <p>To <strong>order your list items horizontally</strong> you just need to specify the parameter <strong>direction: 'horizontal'</strong> when you call the plugin. Here is the first sample that shows 5 lists: </p>
+
+               
+
+                <ol>
+
+                    <li><a href="#">Lorem ipsum 1</a></li>
+
+                    <li><a href="#">Donec pede 2</a></li>
+
+                    <li><a href="#">Fringilla vel 3</a></li>
+
+                    <li><a href="#">Eget arcu 4</a></li>
+
+                    <li><a href="#">In enim 5</a></li>
+
+                    <li><a href="#">Lorem farem 6</a></li>
+
+                    <li><a href="#">Pede justo 7</a></li>
+
+                    <li><a href="#">Vel aliquet 8</a></li>
+
+                    <li><a href="#">Arcu eget 9</a></li>
+
+                    <li><a href="#">Justo rhoncus 10</a></li>
+
+                    <li><a href="#">Ipsum dolor 11</a></li>
+
+                    <li><a href="#">Justo pedec 12</a></li>
+
+                    <li><a href="#">Romanorum 13</a></li>
+
+                    <li><a href="#">Bellum incipit 14</a></li>
+
+                    <li><a href="#">Rosae rosarum 15</a></li>
+
+                </ol>      
+
+                
+
+                <p>In this last sample we have 2 lists ordered horizontally:</p>      
+
+
+
+             <ul class="dolorsit">
+
+                    <li><a href="#">Lorem ipsum 1</a></li>
+
+                    <li><a href="#">Donec pede 2</a></li>
+
+                    <li><a href="#">Fringilla vel 3</a></li>
+
+                    <li><a href="#">Eget arcu 4</a></li>
+
+                    <li><a href="#">In enim 5</a></li>
+
+                    <li><a href="#">Lorem farem 6</a></li>
+
+                    <li><a href="#">Pede justo 7</a></li>
+
+                </ul>
+
+              
+
+              <h2>Easy List Splitter Plugin preserves nested lists now!</h2>
+
+          	   <p>The plugin will <strong>preserve any nested lists</strong> within the list you columnize:</p>
+
+         
+
+                <ul class="children-sample">
+
+                    <li>
+
+                        <h3>Lorem ipsum 1</h3>
+
+                        <p>Nulla venenatis metus sit amet mi sagittis porttitor euismod id metus.</p>
+
+                    </li>
+
+                    <li><h3>Lorem ipsum 1</h3>
+
+                        <p>Quisque velit magna, luctus quis molestie quis, interdum sed risus.</p>
+
+                        <ul>
+
+                            <li>Id blandit turpis ornare ut</li>
+
+                            <li>Fusce tincidunt tortor</li>
+
+                            <li>Vivamus sed orci</li>
+
+                            <li>Pulvinar quis eget metus</li>
+
+                        </ul>
+
+                    </li>
+
+                    <li>
+
+                        <h3>Lorem ipsum 1</h3>
+
+                        <p>Luctus quis molestie quis, interdum sed risus. Mi sagittis porttitor euismod id metus.</p>
+
+                        <ul>
+
+                            <li>Fusce tincidunt tortor</li>
+
+                            <li>Vivamus sed orci metus</li>
+
+                            <li>Morbi vel libero</li>
+
+                        </ul>
+
+                    </li>
+
+                    <li>
+
+                        <h3>Lorem ipsum 1</h3>
+
+                        <p>Quisque velit magna, luctus quis molestie quis, interdum sed risus. Nulla venenatis metus sit amet mi sagittis porttitor euismod id metus.</p>
+
+                    </li>
+
+                    <li>
+
+                        <h3>Lorem ipsum 1</h3>
+
+                        <p>Interdum sed risus. Nulla venenatis metus sit amet mi sagittis porttitor euismod id metus.</p>
+
+                    	<ul>
+
+                            <li>Nam sagittis suscipit</li>
+
+                            <li>Morbi vel libero</li>
+
+                        </ul>
+
+                    </li>
+
+                    <li>
+
+                        <h3>Lorem ipsum 1</h3>
+
+                        <p>Quisque velit magna, luctus quis molestie quis, interdum sed risus. Quisque velit magna, quis, interdum sed risus. Nulla venenatis metus sit amet mi sagittis porttitor euismod id metus.</p>
+
+                    </li>
+
+                </ul>
+
+
+
+
+
+		<p><a href="http://www.madeincima.eu/blog/jquery-plugin-easy-list-splitter/">Go back to the post!</a></p>
+
+    </div>
+
+    
+
+</body>
+
+</html>
