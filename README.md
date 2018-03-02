@@ -34,3 +34,4 @@ $('.my-list').easyListSplitter({
    direction: 'horizontal'
 });
 ```
+
